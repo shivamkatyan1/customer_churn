@@ -18,7 +18,7 @@ Modelling (Decision Tree) → Evaluation → Interpretation → Saved pipeline �
 ## Public repository
 
 **Public repo link (complete source for this project):**
-`[⬆ fill your public GitHub repo URL here before submission]`
+[`https://github.com/shivamkatyan1/customer_churn`](https://github.com/shivamkatyan1/customer_churn)
 
 ## Requirements
 
