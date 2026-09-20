@@ -1,0 +1,22 @@
+# customer_churn requirements (Python 3.11)
+# Data / analysis / modelling
+pandas>=2.2,<3.1
+numpy>=1.26,<3
+scikit-learn>=1.5,<1.10
+matplotlib>=3.8,<3.11
+seaborn>=0.13,<0.15
+joblib>=1.4,<2
+
+# API
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+pydantic>=2.7,<3
+
+# Notebook execution
+jupyter>=1.0,<2
+nbconvert>=7.16,<8
+ipykernel>=6.29,<8
+
+# Testing
+pytest>=8,<9
+httpx>=0.27,<1

@@ -1,0 +1,161 @@
+{
+  "trained_at": "2026-09-19T15:56:54.737348+00:00",
+  "python": "3.11.16",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "versions": {
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "joblib": "1.6.0"
+  },
+  "seed": 42,
+  "data": {
+    "path": "/Users/sk/Developer/Home Assignment/home-assignment-submission/customer_churn/data/TelcoCustomerChurn.csv",
+    "sha256": "3d5c233415c1b42bdea7172c73e620819f507f0a8294bc2337a1d8a8877feef0",
+    "n_rows": 7043,
+    "n_columns": 21,
+    "churn_positive_pct": 26.54
+  },
+  "split": {
+    "n_total": 7043,
+    "n_train": 4930,
+    "n_test": 2113,
+    "test_size_fraction": 0.3,
+    "churn_train": 1308,
+    "churn_train_pct": 26.53,
+    "churn_test": 561,
+    "churn_test_pct": 26.55,
+    "disjoint_ids": true,
+    "expected_sizes": "4930/2113 (70/30 of 7043)"
+  },
+  "model_selection": {
+    "cv": "StratifiedKFold(5, shuffle=True, random_state=42)",
+    "selection_metric": "mean positive-class F1 on training folds",
+    "candidates": [
+      {
+        "name": "baseline_unconstrained",
+        "params": {},
+        "mean_f1": 0.4979,
+        "mean_precision": 0.4955,
+        "mean_recall": 0.5008,
+        "mean_accuracy": 0.7323
+      },
+      {
+        "name": "pruned_depth6_minleaf5",
+        "params": {
+          "max_depth": 6,
+          "min_samples_leaf": 5
+        },
+        "mean_f1": 0.5506,
+        "mean_precision": 0.6137,
+        "mean_recall": 0.5031,
+        "mean_accuracy": 0.7832
+      },
+      {
+        "name": "pruned_balanced_depth6_minleaf5",
+        "params": {
+          "max_depth": 6,
+          "min_samples_leaf": 5,
+          "class_weight": "balanced"
+        },
+        "mean_f1": 0.5959,
+        "mean_precision": 0.486,
+        "mean_recall": 0.7706,
+        "mean_accuracy": 0.7227
+      }
+    ],
+    "selected": "pruned_balanced_depth6_minleaf5"
+  },
+  "test_metrics": {
+    "accuracy": 0.7373402744912447,
+    "precision_positive": 0.5034965034965035,
+    "recall_positive": 0.7700534759358288,
+    "f1_positive": 0.6088794926004228,
+    "confusion_matrix": [
+      [
+        1126,
+        426
+      ],
+      [
+        129,
+        432
+      ]
+    ],
+    "confusion_labels": [
+      "No",
+      "Yes"
+    ]
+  },
+  "feature_names": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "SeniorCitizen",
+    "internet_addon_count",
+    "tenure_band",
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "class_mapping": {
+    "No": 0,
+    "Yes": 1
+  },
+  "positive_class": "Yes",
+  "pipeline_file": "churn_model.pkl",
+  "feature_importance_top10": [
+    {
+      "feature": "Contract",
+      "importance": 0.5686
+    },
+    {
+      "feature": "OnlineSecurity",
+      "importance": 0.1023
+    },
+    {
+      "feature": "tenure",
+      "importance": 0.0969
+    },
+    {
+      "feature": "MonthlyCharges",
+      "importance": 0.0935
+    },
+    {
+      "feature": "InternetService",
+      "importance": 0.0453
+    },
+    {
+      "feature": "TotalCharges",
+      "importance": 0.0323
+    },
+    {
+      "feature": "PaymentMethod",
+      "importance": 0.0175
+    },
+    {
+      "feature": "PaperlessBilling",
+      "importance": 0.0148
+    },
+    {
+      "feature": "internet_addon_count",
+      "importance": 0.0074
+    },
+    {
+      "feature": "Dependents",
+      "importance": 0.0058
+    }
+  ],
+  "input_schema": "see src/churn/api_schema.py ChurnRequest"
+}
